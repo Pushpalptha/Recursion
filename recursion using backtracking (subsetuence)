@@ -1,0 +1,12 @@
+def subsetsum(arr, k, n, total, idx):
+    if idx == n:
+        return total == k
+    return subsetsum(arr, k, n, total + arr[idx], idx + 1) or subsetsum(arr, k, n, total, idx + 1)
+
+arr = [1, 5, 7, 2, 6, 9]
+n = 6
+result = subsetsum(arr, 12, n, 0, 0)
+if result:
+    print("sum exists")
+else:
+    print("sum does not exist")
